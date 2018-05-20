@@ -70,3 +70,13 @@ echo "set -g theme_nerd_fonts yes" >> ~/.config/fish/conf.d/omf.fish
 
 echo "##### Please Change Your Terminal Font to Sauce Code Pro Nerd Font #### \n"
 echo "##### Then the Theme will work #####"
+
+##### Add Shadowsocks-qt5
+# There is no Binoic version, so add Artful version for temp use
+echo "
+deb http://ppa.launchpad.net/hzwhuang/ss-qt5/ubuntu artful main
+deb-src http://ppa.launchpad.net/hzwhuang/ss-qt5/ubuntu artful main
+" >> /etc/apt/sources.list
+
+apt update
+apt install shadowsocks-qt5
