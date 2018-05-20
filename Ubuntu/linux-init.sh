@@ -62,7 +62,7 @@ omf install bobthefish
 
 wget https://github.com/ryanoasis/nerd-fonts/raw/master/patched-fonts/SourceCodePro/Regular/complete/Sauce%20Code%20Pro%20Nerd%20Font%20Complete%20Mono.ttf
 
-mv Sauce%20Code%20Pro%20Nerd%20Font%20Complete%20Mono.ttf /usr/share/fonts/truetype/
+mv Sauce Code Pro Nerd Font Complete Mono.ttf /usr/share/fonts/truetype/
 
 fc-cache -f -v
 
@@ -73,10 +73,18 @@ echo "##### Then the Theme will work #####"
 
 ##### Add Shadowsocks-qt5
 # There is no Binoic version, so add Artful version for temp use
-echo "
-deb http://ppa.launchpad.net/hzwhuang/ss-qt5/ubuntu artful main
-deb-src http://ppa.launchpad.net/hzwhuang/ss-qt5/ubuntu artful main
-" >> /etc/apt/sources.list
+
+# Deprected
+# add-apt-repository ppa:hzwhuang/ss-qt5
+# sed -i 's/bionic/artful/g' /etc/apt/sources.list.d/hzwhuang-ubuntu-ss-qt5-bionic.list
+
+add-apt-repository "deb http://ppa.launchpad.net/hzwhuang/ss-qt5/ubuntu artful main "
+apt-key adv --keyserver  hkp://keyserver.ubuntu.com:80 --recv-keys 5F00FA99
 
 apt update
 apt install shadowsocks-qt5
+
+##### Install Phpstorm, Webstorm
+snap install phpstorm --classic
+snap install webstorm --classic
+
