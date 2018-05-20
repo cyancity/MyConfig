@@ -1,5 +1,13 @@
 #! /usr/bin/env bash
 
+###########################################################
+#             Some Variables You Need To Set              #
+###########################################################
+
+# Example: 127.0.0.1:1024
+# Then you should add you server config to shadowsocks-qt5
+SS-Server=""
+
 export DEBIAN_FRONTED=nointeractive
 
 ##### Install Sublime (Stable Version)
@@ -71,12 +79,8 @@ echo "set -g theme_nerd_fonts yes" >> ~/.config/fish/conf.d/omf.fish
 echo "##### Please Change Your Terminal Font to Sauce Code Pro Nerd Font #### \n"
 echo "##### Then the Theme will work #####"
 
-##### Add Shadowsocks-qt5
+# Add Shadowsocks-qt5
 # There is no Binoic version, so add Artful version for temp use
-
-# Deprected
-# add-apt-repository ppa:hzwhuang/ss-qt5
-# sed -i 's/bionic/artful/g' /etc/apt/sources.list.d/hzwhuang-ubuntu-ss-qt5-bionic.list
 
 add-apt-repository "deb http://ppa.launchpad.net/hzwhuang/ss-qt5/ubuntu artful main "
 apt-key adv --keyserver  hkp://keyserver.ubuntu.com:80 --recv-keys 5F00FA99
@@ -84,7 +88,39 @@ apt-key adv --keyserver  hkp://keyserver.ubuntu.com:80 --recv-keys 5F00FA99
 apt update
 apt install shadowsocks-qt5
 
+###########################################################
+#       If you have SS Server, fill it on the top         #
+###########################################################
+
+omf install proxy
+
+touch ~/.config/omf/before.init.fish
+
+if [ -n $SSServer ]
+
+then echo "
+set proxy_host $SSServer
+set proxy_auth false
+" >> ~/.config/omf/before.init.fish
+
+fi
+
+######################## End ##############################
+
 ##### Install Phpstorm, Webstorm
+
 snap install phpstorm --classic
 snap install webstorm --classic
 
+# Git Config
+
+git config --global core.editor "vim"
+
+# Text Editor
+
+apt install emacs
+git clone https://github.com/syl20bnr/spacemacs ~/.emacs.d
+
+# Tmux Config
+
+wget https://raw.githubusercontent.com/cyancity/MyConfig/master/Ubuntu/.tmux.conf -O ~/
