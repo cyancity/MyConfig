@@ -28,7 +28,7 @@ curl --slient --location https://deb.nodesource.com/setup_8.x | bash -
 ##### Updates
 apt update
 ##### Basic Packages
-apt install -y build-essential dos2unix gcc git unzip make python2.7-dev python-pip re2c supervisor unattended-upgrades whois vim libnotify-bin pv cifs-utils bash-completion net-tools tmux
+apt install -y build-essential dos2unix gcc git unzip make python2.7-dev python-pip re2c supervisor unattended-upgrades whois vim-gtk libnotify-bin pv cifs-utils bash-completion net-tools tmux ctags ack-grep
 
 ##### Install Node.js
 apt install -y nodejs
