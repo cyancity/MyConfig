@@ -25,7 +25,7 @@ Bundle 'tomtom/tlib_vim'
 "-----------------
 " Fast navigation
 "-----------------
-Bundle 'edsono/vim-matchit'
+Bundle 'bumaociyuan/vim-matchit'
 Bundle 'Lokaltog/vim-easymotion'
 
 "--------------
@@ -69,10 +69,8 @@ Bundle 'lepture/vim-jinja'
 Bundle 'othree/html5.vim'
 " Bundle 'tpope/vim-haml'
 Bundle 'pangloss/vim-javascript'
-Bundle 'kchmck/vim-coffee-script'
-Bundle 'nono/jquery.vim'
 " Bundle 'groenewege/vim-less'
-" Bundle 'wavded/vim-stylus'
+Bundle 'wavded/vim-stylus'
 " Bundle 'nono/vim-handlebars'
 
 "------- markup language -------
@@ -95,11 +93,8 @@ Bundle 'kien/rainbow_parentheses.vim'
 " Color Schemes
 "--------------
 Bundle 'rickharris/vim-blackboard'
-Bundle 'altercation/vim-colors-solarized'
-Bundle 'rickharris/vim-monokai'
 Bundle 'tpope/vim-vividchalk'
 Bundle 'Lokaltog/vim-distinguished'
-Bundle 'chriskempson/vim-tomorrow-theme'
 Bundle 'fisadev/fisa-vim-colorscheme'
 
 filetype plugin indent on     " required!
