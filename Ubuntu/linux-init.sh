@@ -20,27 +20,23 @@ apt install sublime-text
 ##### Add Common things
 apt install -y software-properties-common curl
 
-##### Add Node.js
-curl --slient --location https://deb.nodesource.com/setup_8.x | bash -
+##### Install Nvm
+curl -o- https://raw.githubusercontent.com/creationix/nvm/v0.33.11/install.sh | bash
 
-####################### Install Nodejs
+export NVM_DIR="$HOME/.nvm"
 
-##### Updates
-apt update
+[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"
+
+##### Install Node 10
+nvm install 10.4.0
+
 ##### Basic Packages
 apt install -y build-essential dos2unix gcc git unzip make python2.7-dev python-pip re2c supervisor unattended-upgrades whois vim-gtk libnotify-bin pv cifs-utils bash-completion net-tools tmux ctags ack-grep
 
-##### Install Node.js
-apt install -y nodejs
-
 npm config set registry https://registry.npm.taobao.org
-
 npm i npm -g
-npm install -g gulp-cli
-npm install -g bower
-npm install -g yarn
-npm install -g grunt-cli
 
+npm install -g yarn
 yarn config set registry https://registry.npm.taobao.org
 
 ##### Install Docker

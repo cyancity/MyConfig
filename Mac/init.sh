@@ -4,10 +4,12 @@
 
 /usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
 
-brew install brew ccat yarn node tmux go fish python3 wget 
+brew install ctags ack ccat yarn tmux go fish python3 wget docker macvim 
 
 
 # Oh my fish
+
+curl -L https://get.oh-my.fish | fish
 
 
 # Install Spacemacs
