@@ -31,7 +31,7 @@ export NVM_DIR="$HOME/.nvm"
 nvm install 10.4.0
 
 ##### Basic Packages
-apt install -y build-essential dos2unix gcc git unzip make python2.7-dev python-pip re2c supervisor unattended-upgrades whois vim-gtk libnotify-bin pv cifs-utils bash-completion net-tools tmux ctags ack-grep
+apt install -y build-essential emacs xclip dos2unix gcc git unzip make python2.7-dev python-pip re2c supervisor unattended-upgrades whois vim-gtk libnotify-bin pv cifs-utils bash-completion net-tools tmux ctags ack-grep
 
 npm config set registry https://registry.npm.taobao.org
 npm i npm -g
@@ -46,7 +46,6 @@ user$ curl -sSL https://get.daocloud.io/docker | sh
 git config --global core.editor "vim"
 
 # Text Editor
-apt install emacs
 git clone https://github.com/syl20bnr/spacemacs ~/.emacs.d
 
 # Tmux Config
@@ -58,9 +57,8 @@ apt-get update
 apt-get -y install fish
 
 # chown dir priv
-chown -R $USER ~/.config
-chown -R $USER ~/.local/share/fish
-chown -R $USER ~/.emacs.d
+chown -R $USER:$(id -gn $USER) ~/.config
+chown -R $USER:$(id -gn $USER) ~/.emacs.d
 
 
 ##### Installing Oh-my-fish
