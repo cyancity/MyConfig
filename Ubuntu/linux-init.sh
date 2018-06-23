@@ -18,7 +18,8 @@ apt -y upgrade
 apt install sublime-text
 
 ##### Add Common things
-apt install -y software-properties-common curl
+apt install -y software-properties-common curl build-essential guake emacs xclip dos2unix gcc git unzip make python2.7-dev python-pip re2c supervisor unattended-upgrades whois vim-gtk libnotify-bin pv cifs-utils bash-completion net-tools tmux ctags ack-grep
+
 
 ##### Install Nvm
 curl -o- https://raw.githubusercontent.com/creationix/nvm/v0.33.11/install.sh | bash
@@ -30,9 +31,8 @@ export NVM_DIR="$HOME/.nvm"
 ##### Install Node 10
 nvm install 10.4.0
 
-##### Basic Packages
-apt install -y build-essential emacs xclip dos2unix gcc git unzip make python2.7-dev python-pip re2c supervisor unattended-upgrades whois vim-gtk libnotify-bin pv cifs-utils bash-completion net-tools tmux ctags ack-grep
 
+##### Update and install package
 npm config set registry https://registry.npm.taobao.org
 npm i npm -g
 
